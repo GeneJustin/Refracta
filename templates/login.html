@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Refracta</title>
+    <link rel="stylesheet" href="/static/auth.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-left">
+        <div class="auth-brand">
+            <svg class="brand-icon" viewBox="0 0 32 32" fill="none"
+                 stroke="currentColor" stroke-width="2">
+                <path d="M16 4 28 27H4z"/>
+                <path d="M20 18l8-3" stroke="#5ee0f2"/>
+                <path d="M21 22l7 2" stroke="#3b82f6"/>
+            </svg>
+            <span>Refracta</span>
+        </div>
+
+        <div class="hero-content">
+            <h2>Turn receipts into<br>business decisions.</h2>
+            <p>
+                Scan paper or digital receipts and get dashboards,
+                reports and advice for your business.
+            </p>
+        </div>
+
+        <div class="auth-hero">
+            <svg viewBox="0 0 520 180" fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+                <path d="M0 105H136" stroke="#F2F2F5" stroke-width="2.5"/>
+                <path d="M116 155L204 12L292 155H116Z"
+                      stroke="#F2F2F5" stroke-width="2.5"/>
+                <path d="M264 110L500 48"
+                      stroke="#5EE0F2" stroke-width="2.5"/>
+                <path d="M264 112H500"
+                      stroke="#A78BFA" stroke-width="2.5"/>
+                <path d="M264 110L500 157"
+                      stroke="#3B82F6" stroke-width="2.5"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-card">
+
+            <h1>Sign in</h1>
+            <p class="subtitle">Welcome back to Refracta</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        aria-label="Email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        aria-label="Password"
+                        required
+                    >
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-option">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember this device</span>
+                    </label>
+
+                    <a href="#" id="forgotPassword">Forgot password?</a>
+                </div>
+
+                <button type="submit" id="loginButton">
+                    Continue
+                </button>
+            </form>
+
+            <p id="message"></p>
+
+            <div class="language-option">
+                Language: <strong>English</strong>
+                <span> · </span>
+                <button type="button" id="languageButton">
+                    Bahasa Indonesia
+                </button>
+            </div>
+
+            <div class="switch-page">
+                Don't have an account?
+                <a href="/register">Register</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/auth.js"></script>
+</body>
+</html>

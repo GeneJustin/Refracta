@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Refracta</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/index.css"
+    >
+</head>
+
+<body>
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            Refracta
+        </a>
+
+        <div class="nav-links">
+            <a href="/" class="active">
+                Home
+            </a>
+            <a href="/scan">
+                Scan
+            </a>
+            <a href="/chatbot">
+                AI Chatbot
+            </a>
+            <a href="/dashboard">
+                Dashboard
+            </a>
+            <a href="/history">
+                History
+            </a>
+        </div>
+
+        <button id="logoutButton" class="logout-btn">
+            Logout
+        </button>
+
+    </nav>
+    <main class="container">
+        <section class="welcome">
+            <h1>
+                Welcome back,
+                <span id="username">
+                    User
+                </span>
+            </h1>
+            <p>
+                Turn your business data into useful insights.
+            </p>
+            <p id="userInfo" class="user-info"></p>
+        </section>
+
+        <section class="features">
+            <a href="/scan" class="feature-card">
+                <div class="feature-icon">
+                    📷
+                </div>
+                <h3>
+                    Scan
+                </h3>
+                <p>
+                    Scan receipts or bookkeeping records
+                    and turn them into structured data.
+                </p>
+                <span class="feature-link">
+                    Start scanning →
+                </span>
+            </a>
+
+
+            <a href="/chatbot" class="feature-card">
+                <div class="feature-icon">
+                    💬
+                </div>
+                <h3>
+                    AI Chatbot
+                </h3>
+                <p>
+                    Ask questions about your business data
+                    and get AI-powered insights.
+                </p>
+                <span class="feature-link">
+                    Ask AI →
+                </span>
+            </a>
+
+            <a href="/dashboard" class="feature-card">
+                <div class="feature-icon">
+                    📊
+                </div>
+                <h3>
+                    Dashboard
+                </h3>
+                <p>
+                    Automatically create a dashboard
+                    from your business data.
+                </p>
+                <span class="feature-link">
+                    Create dashboard →
+                </span>
+            </a>
+
+
+            <a href="/history" class="feature-card">
+                <div class="feature-icon">
+                    🕘
+                </div>
+
+                <h3>
+                    History
+                </h3>
+                <p>
+                    View your previous scans and
+                    generated business data.
+                </p>
+                <span class="feature-link">
+                    View history →
+                </span>
+            </a>
+        </section>
+
+        <section class="recent-section">
+
+            <div class="section-header">
+                <h2>
+                    Recent Activity
+                </h2>
+                <a href="/history" class="see-all">
+                    See all →
+                </a>
+
+            </div>
+
+
+            <div id="historyContainer" class="history-container">
+                <div class="empty-history">
+                    Loading...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script
+        src="/static/index.js"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refracta AI Chat</title>
+    <link rel="stylesheet" href="/static/chatbot.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-top">
+                <a class="brand" href="/">
+                    <span class="brand-mark">R</span>
+                    <span>Refracta</span>
+                </a>
+                <button class="icon-button mobile-close" id="closeSidebar" aria-label="Close sidebar">×</button>
+            </div>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a class="nav-link" href="/"><span>⌂</span> Home</a>
+                <a class="nav-link" href="/scan"><span>▧</span> Scan Receipt</a>
+                <a class="nav-link active" href="/chatbot"><span>✦</span> AI Chatbot</a>
+                <a class="nav-link" href="/dashboard"><span>▥</span> Dashboard</a>
+                <a class="nav-link" href="/history"><span>◷</span> Files & History</a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="history-heading">
+                <span>YOUR CHATS</span>
+                <button class="icon-button" id="refreshHistory" title="Refresh history" aria-label="Refresh history">↻</button>
+            </div>
+
+            <button class="new-chat-button" id="newChatButton">
+                <span>＋</span> New chat
+            </button>
+
+            <div class="history-list" id="historyList">
+                <p class="history-empty">Loading conversations...</p>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button class="logout-button" id="logoutButton">
+                    <span class="logout-icon">↪</span>
+                    <span>Log out</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+
+        <main class="chat-main">
+            <header class="chat-header">
+                <button class="icon-button mobile-menu" id="openSidebar" aria-label="Open sidebar">☰</button>
+                <div>
+                    <h1 id="chatTitle">New chat</h1>
+                    <p class="status-line"><span class="status-dot"></span> Refracta AI</p>
+                </div>
+                <button class="icon-button" id="renameButton" title="Rename conversation" aria-label="Rename conversation">✎</button>
+            </header>
+
+            <section class="messages-area" id="messagesArea">
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-symbol"></div>
+                    <h2>What can I help you with?</h2>
+                    <p>Ask about your business, bookkeeping, or new ideas.</p>
+                    <div class="suggestions">
+                        <button class="suggestion" data-prompt="How can I manage my small business finances?">Manage my finances</button>
+                        <button class="suggestion" data-prompt="Bagaimana cara meningkatkan keuntungan bisnis saya?">Tingkatkan keuntungan</button>
+                        <button class="suggestion" data-prompt="Give me ideas to attract more customers.">Find more customers</button>
+                    </div>
+                </div>
+                <div class="message-list" id="messageList"></div>
+            </section>
+
+            <div class="composer-wrap">
+                <form class="composer" id="chatForm">
+                    <textarea id="messageInput" rows="1" maxlength="8000" placeholder="Message Refracta AI..." aria-label="Your message"></textarea>
+                    <button class="send-button" id="sendButton" type="submit" aria-label="Send message">↑</button>
+                </form>
+                <p class="composer-note">Refracta AI can make mistakes. Verify important business decisions.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/chatbot.js"></script>
+</body>
+</html>

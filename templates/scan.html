@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Refracta</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            Refracta
+        </a>
+
+        <div class="nav-links">
+            <a href="/" class="active">
+                Home
+            </a>
+            <a href="/scan">
+                Scan
+            </a>
+            <a href="/chatbot">
+                AI Chatbot
+            </a>
+            <a href="/dashboard">
+                Dashboard
+            </a>
+            <a href="/history">
+                History
+            </a>
+        </div>
+
+        <button id="logoutButton" class="logout-btn">
+            Logout
+        </button>
+
+    </nav>
+<div class="app">
+
+    <header>
+        <h1>Refracta</h1>
+        <p>Convert receipts into structured data</p>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section id="homeSection" class="section">
+
+            <div class="hero">
+                <div class="icon">🧾</div>
+
+                <h2>Refracta</h2>
+
+                <p>
+                    Upload or scan a receipt and convert it
+                    into CSV or Excel.
+                </p>
+            </div>
+
+            <div class="actions">
+
+                <button id="uploadButton" class="main-button">
+                    📁 Upload Image
+                </button>
+
+                <button id="scanButton" class="main-button secondary">
+                    📷 Scan Receipt
+                </button>
+
+            </div>
+
+            <input
+                type="file"
+                id="uploadInput"
+                accept="image/*"
+                hidden
+            >
+
+        </section>
+
+        <!-- CAMERA -->
+        <section id="cameraSection" class="section hidden">
+
+            <div class="top-bar">
+                <button id="closeCamera">←</button>
+                <h2>Scan Receipt</h2>
+            </div>
+
+            <div class="camera-container">
+
+                <video
+                    id="camera"
+                    autoplay
+                    playsinline
+                ></video>
+
+                <div class="camera-frame"></div>
+
+            </div>
+
+            <p class="camera-info">
+                Position the receipt inside the frame
+            </p>
+
+            <button
+                id="captureButton"
+                class="capture-button"
+            >
+                ●
+            </button>
+
+        </section>
+
+        <!-- PREVIEW -->
+        <section id="previewSection" class="section hidden">
+
+            <div class="top-bar">
+                <button id="backPreview">←</button>
+                <h2>Confirm Photo</h2>
+            </div>
+
+            <img
+                id="previewImage"
+                class="preview-image"
+            >
+
+            <div class="preview-actions">
+
+                <button
+                    id="retakeButton"
+                    class="secondary-button"
+                >
+                    Retake
+                </button>
+
+                <button
+                    id="processButton"
+                    class="main-button"
+                >
+                    Use Photo
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- RESULT -->
+        <section id="resultSection" class="section hidden">
+
+            <div class="top-bar">
+                <button id="backResult">←</button>
+                <h2>Extracted Data</h2>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Refracta is reading your Image...</p>
+            </div>
+
+            <div id="resultContent">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Qty</th>
+                                <th>Unit Price</th>
+                                <th>Total</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="resultTable"></tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="download-actions">
+
+                    <button
+                        id="csvButton"
+                        class="main-button"
+                    >
+                        Download CSV
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File History | Refracta</title>
+    <link rel="stylesheet" href="/static/history.css">
+    <script src="/static/history.js" defer></script>
+</head>
+<body>
+    <main class="history-page">
+        <header class="page-header">
+            <div class="header-copy">
+                <a class="back-link" href="/">&#8592; Dashboard</a>
+                <p class="eyebrow">REFRACTA WORKSPACE</p>
+                <h1>File History</h1>
+                <p class="page-description">
+                    Lihat dokumen yang pernah diproses dan unduh hasilnya.
+                </p>
+            </div>
+            <a class="primary-button" href="/scan">+ Scan File</a>
+        </header>
+
+        {% if load_error %}
+        <div class="notice">{{ load_error }}</div>
+        {% endif %}
+
+        <section class="history-toolbar">
+            <label class="search-box">
+                <span aria-hidden="true">&#9906;</span>
+                <input id="historySearch" type="search"
+                       placeholder="Cari nama file atau sumber..."
+                       aria-label="Cari riwayat file">
+            </label>
+
+            <select id="typeFilter" aria-label="Filter jenis file">
+                <option value="all">Semua jenis</option>
+                <option value="receipt">Receipt</option>
+                <option value="csv">CSV</option>
+                <option value="other">Lainnya</option>
+            </select>
+
+            <select id="sortOrder" aria-label="Urutkan file">
+                <option value="newest">Terbaru</option>
+                <option value="oldest">Terlama</option>
+                <option value="name">Nama A–Z</option>
+            </select>
+        </section>
+
+        <div class="results-header">
+            <span>Riwayat dokumen</span>
+            <span><strong id="visibleCount">{{ files|length }}</strong> file</span>
+        </div>
+
+        <section id="historyList" class="history-list">
+            {% for file in files %}
+            <article
+                class="history-card"
+                data-name="{{ (file.name or '')|lower }}"
+                data-type="{{ (file.file_type or '')|lower }}"
+                data-source="{{ (file.source or '')|lower }}"
+                data-date="{{ file.created_at or '' }}"
+            >
+                <div class="card-main">
+                    <div class="file-thumbnail">
+                        {% if file.storage_path and file.file_type == 'receipt' %}
+                        <img
+                            src="{{ url_for('history_image', file_id=file.id) }}"
+                            alt="Pratinjau {{ file.name or 'dokumen' }}"
+                            loading="lazy"
+                        >
+                        {% else %}
+                        <div class="file-placeholder">
+                            <span aria-hidden="true">&#128196;</span>
+                            <small>{{ (file.file_type or 'FILE')|upper }}</small>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="file-info">
+                        <h2 title="{{ file.name or 'Tanpa nama' }}">
+                            {{ file.name or 'Tanpa nama' }}
+                        </h2>
+
+                        <div class="file-meta">
+                            <span class="type-badge type-{{ (file.file_type or 'other')|lower }}">
+                                {{ file.file_type or 'File' }}
+                            </span>
+                            <span class="meta-dot">·</span>
+                            <span class="source-label">{{ file.source or 'Sumber tidak diketahui' }}</span>
+                        </div>
+
+                        <p class="date-label">
+                            <time class="formatted-date"
+                                  datetime="{{ file.created_at or '' }}">
+                                {{ file.created_at or 'Tanggal tidak tersedia' }}
+                            </time>
+                        </p>
+                    </div>
+
+                    <div class="file-summary">
+                        <span class="summary-label">Jumlah baris</span>
+                        <strong>
+                            {{ file.row_count if file.row_count is not none else '—' }}
+                        </strong>
+                    </div>
+
+                    <button
+                        class="details-toggle"
+                        type="button"
+                        data-file-id="{{ file.id }}"
+                        aria-expanded="false"
+                    >
+                        Detail <span aria-hidden="true">&#9662;</span>
+                    </button>
+                </div>
+
+                <div class="card-details" hidden>
+                    <div class="detail-loading">Memuat detail file...</div>
+                </div>
+            </article>
+            {% endfor %}
+
+            <div id="emptyState" class="empty-state" {% if files %}hidden{% endif %}>
+                <div class="empty-icon" aria-hidden="true">&#128196;</div>
+                <h2 id="emptyTitle">Belum ada riwayat file</h2>
+                <p id="emptyDescription">
+                    File yang kamu proses akan muncul di sini.
+                </p>
+                <a href="/scan" class="primary-button">Mulai Scan</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
