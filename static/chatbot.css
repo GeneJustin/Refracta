@@ -113,8 +113,8 @@ button:disabled {
     width: 29px;
     height: 29px;
     place-items: center;
-    color: white;
-    background: var(--accent);
+    color: #0b0b0d;
+    background: var(--cyan);
     border-radius: 8px;
     font-size: 15px;
 }
@@ -133,7 +133,7 @@ button:disabled {
     gap: 9px;
     min-height: 35px;
     padding: 8px 10px;
-    color: #535650;
+    color: #b8b8c3;
     font-size: 12.5px;
     font-weight: 500;
     text-decoration: none;
@@ -151,12 +151,12 @@ button:disabled {
 }
 
 .nav-link:hover {
-    background: #eceee9;
+    background: #202026;
 }
 
 .nav-link.active {
-    color: #294a34;
-    background: var(--accent-light);
+    color: var(--cyan);
+    background: rgba(94, 224, 242, 0.10);
     font-weight: 650;
 }
 
@@ -164,7 +164,7 @@ button:disabled {
     flex: 0 0 1px;
     height: 1px;
     margin: 12px 2px 10px;
-    background: #dedfd9;
+    background: var(--border);
 }
 
 
@@ -175,7 +175,7 @@ button:disabled {
     width: 31px;
     height: 31px;
     place-items: center;
-    color: #64675f;
+    color: var(--muted);
     background: transparent;
     border: 0;
     border-radius: 7px;
@@ -183,7 +183,7 @@ button:disabled {
 }
 
 .icon-button:hover {
-    background: #eceee9;
+    background: #202026;
 }
 
 .history-heading .icon-button {
@@ -216,9 +216,10 @@ button:disabled {
     width: 100%;
     min-height: 36px;
     padding: 8px 10px;
-    color: #344f3a;
-    background: #fff;
-    border: 1px solid #dce4dd;
+    color: var(--cyan);
+    background: var(--card);
+    border: 1px solid;
+    border-color: var(--border);
     border-radius: 8px;
     font-size: 12.5px;
     font-weight: 650;
@@ -227,8 +228,8 @@ button:disabled {
 }
 
 .new-chat-button:hover {
-    background: var(--accent-light);
-    border-color: #cbd9cd;
+    background: $202027;
+    border-color: rgba(94, 224, 242, 0.4);
 }
 
 
@@ -244,7 +245,7 @@ button:disabled {
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #c9cec5 transparent;
+    scrollbar-color: #454550 transparent;
 }
 
 .history-list::-webkit-scrollbar {
@@ -252,7 +253,7 @@ button:disabled {
 }
 
 .history-list::-webkit-scrollbar-thumb {
-    background: #c9cec5;
+    background: #454550;
     border-radius: 8px;
 }
 
@@ -281,7 +282,7 @@ button:disabled {
 
 .history-item:hover,
 .history-item.selected {
-    background: #e9ebe6;
+    background: #202026;
 }
 
 .history-open {
@@ -292,7 +293,7 @@ button:disabled {
     min-height: 34px;
     padding: 7px 8px;
     overflow: hidden;
-    color: #3c3f39;
+    color: #c7c7d1;
     background: transparent;
     border: 0;
     border-radius: 6px;
@@ -304,11 +305,11 @@ button:disabled {
 }
 
 .history-open:hover {
-    color: #294a34;
+    color: var(--cyan);
 }
 
 .history-item.selected .history-open {
-    color: #294a34;
+    color: var(--cyan);
     font-weight: 600;
 }
 
@@ -318,7 +319,7 @@ button:disabled {
     width: 26px;
     height: 26px;
     place-items: center;
-    color: #777a74;
+    color: var(--muted);
     background: transparent;
     border: 0;
     border-radius: 6px;
@@ -329,11 +330,12 @@ button:disabled {
 .history-item:hover .history-menu,
 .history-menu:focus,
 .history-menu:focus-visible {
+    color: var(--cyan);
     opacity: 1;
 }
 
 .history-menu:hover {
-    background: white;
+    background: #303039;
 }
 
 
@@ -357,7 +359,7 @@ button:disabled {
     width: 100%;
     min-height: 34px;
     padding: 7px 10px;
-    color: #666960;
+    color: var(--muted);
     background: transparent;
     border: 0;
     border-radius: 7px;
@@ -366,8 +368,8 @@ button:disabled {
 }
 
 .logout-button:hover {
-    color: #344f3a;
-    background: #eceee9;
+    color: var(--cyan);
+    background: #202026;
 }
 
 .logout-icon {
@@ -423,7 +425,7 @@ button:disabled {
     flex: 0 0 6px;
     width: 6px;
     height: 6px;
-    background: #6b9874;
+    background: #5ee0a0;
     border-radius: 50%;
 }
 
@@ -454,8 +456,8 @@ button:disabled {
     height: 46px;
     place-items: center;
     margin: 0 auto 17px;
-    color: var(--accent);
-    background: var(--accent-light);
+    color: var(--cyan);
+    background: rgba(94, 224, 242, 0.10);
     border-radius: 14px;
     font-size: 24px;
 }
@@ -486,8 +488,8 @@ button:disabled {
 
 .suggestion {
     padding: 9px 11px;
-    color: #52564e;
-    background: white;
+    color: #d0d0da;
+    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
     font-size: 11px;
@@ -496,8 +498,8 @@ button:disabled {
 }
 
 .suggestion:hover {
-    border-color: #b6c9b9;
-    background: #f7faf7;
+    border-color: var(--cyan);
+    background: #202027;
 }
 
 
@@ -524,16 +526,16 @@ button:disabled {
     width: 27px;
     height: 27px;
     place-items: center;
-    color: #496b55;
-    background: var(--accent-light);
+    color: var(--cyan);
+    background: rgba(94, 224, 242, 0.10);
     border-radius: 50%;
     font-size: 11px;
     font-weight: 750;
 }
 
 .message.user .message-avatar {
-    color: white;
-    background: #73786e;
+    color: #ffffff;
+    background: #34343d;
 }
 
 .message-content {
@@ -557,7 +559,9 @@ button:disabled {
     margin: 8px 0;
     padding: 10px;
     overflow-x: auto;
-    background: #f4f5f2;
+    color: #e3e3ec;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 8px;
     font-size: 11.5px;
 }
@@ -565,6 +569,7 @@ button:disabled {
 .message-content img,
 .message-content table {
     max-width: 100%;
+    color: var(--text);
 }
 
 .message-content table {
@@ -587,14 +592,15 @@ button:disabled {
     align-items: flex-end;
     gap: 8px;
     padding: 9px 10px;
-    background: white;
-    border: 1px solid #dfe1db;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 13px;
-    box-shadow: 0 3px 14px rgba(20, 30, 20, 0.035);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
 }
 
 .composer:focus-within {
-    border-color: #9cb4a0;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.15);
 }
 
 .composer textarea {
@@ -604,6 +610,7 @@ button:disabled {
     padding: 6px 3px;
     resize: none;
     color: var(--text);
+    caret-color: var(--cyan);
     background: transparent;
     border: 0;
     outline: none;
@@ -612,7 +619,7 @@ button:disabled {
 }
 
 .composer textarea::placeholder {
-    color: #999c95;
+    color: var(--muted);
 }
 
 .send-button {
@@ -622,19 +629,19 @@ button:disabled {
     height: 32px;
     place-items: center;
     color: white;
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--blue), var(--purple));
     border: 0;
     border-radius: 9px;
     font-size: 20px;
 }
 
 .send-button:hover {
-    background: #3b5b45;
+    background: linear-gradient(135deg, #5595ff, #b49aff);
 }
 
 .composer-note {
     margin: 6px 0 0;
-    color: #92958e;
+    color: var(--muted);
     font-size: 9px;
     text-align: center;
     line-height: 1.45;
@@ -769,6 +776,12 @@ button:disabled {
     }
 }
 
+.error-message,
+.error-alert {
+    color: #ffaaa5;
+    background: rgba(255, 80, 80, 0.07);
+    border: 1px solid rgba(255, 100, 100, 0.2);
+}
 
 @media (prefers-reduced-motion: reduce) {
     *,
