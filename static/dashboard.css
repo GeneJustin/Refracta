@@ -144,100 +144,62 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .muted { color: var(--muted); font-size: 13px; }
 
 
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 14px 28px;
-  background: rgba(11, 11, 13, .92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid #2a2a30;
+.navbar {
+    height: 70px;
+    background: #121214;
+    border-bottom: 1px solid #2a2a30;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #f2f2f5;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: -.02em;
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f2f2f5;
 }
 
-.brand-dot {
-  width: 12px;
-  height: 12px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #5ee0f2, #a78bfa);
-  box-shadow: 0 0 18px rgba(94, 224, 242, .35);
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
 }
 
-.nav {
-  display: flex;
-  gap: 4px;
-  margin-left: 8px;
-  flex: 1;
-  flex-wrap: wrap;
+.nav-links a {
+    font-size: 14px;
+    color: #9a9aa6;
+    transition: 0.2s;
 }
 
-.nav a {
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #9a9aa6;
-  transition: background .2s, color .2s;
+.nav-links a:hover,
+.nav-links a.active {
+    color: #5ee0f2;
 }
 
-.nav a:hover {
-  color: #f2f2f5;
-  background: #18181c;
+.logout-btn {
+    border: none;
+    background: #18181c;
+    color: #f2f2f5;
+
+    padding: 10px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
 }
 
-.nav a.active {
-  color: #5ee0f2;
-  background: rgba(94, 224, 242, .08);
-  box-shadow: inset 0 0 0 1px rgba(94, 224, 242, .18);
+.logout-btn:hover {
+    background: #2a2a30;
 }
-
-.icon-btn {
-  width: 38px;
-  height: 38px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: #18181c;
-  border: 1px solid #2a2a30;
-  color: #9a9aa6;
-  transition: background .2s, color .2s, border-color .2s;
-}
-
-.icon-btn:hover {
-  color: #5ee0f2;
-  background: #202027;
-  border-color: rgba(94, 224, 242, .35);
-}
-
-@media (max-width: 900px) {
-  .topbar {
-    padding: 12px 16px;
-    gap: 12px;
-  }
-}
-
-@media (max-width: 560px) {
-  .nav a {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-}
-
 
 
 .page { max-width: 1280px; margin: 0 auto; padding: 36px 28px 120px; }
