@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f7f8fa;
-    color: #1f2937;
+    background: #0b0b0d;
+    color: #f2f2f5;
 }
 
 a {
@@ -22,8 +22,8 @@ a {
 
 .navbar {
     height: 70px;
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
+    background: #121214;
+    border-bottom: 1px solid #2a2a30;
 
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ a {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: #111827;
+    color: #f2f2f5;
 }
 
 .nav-links {
@@ -50,19 +50,19 @@ a {
 
 .nav-links a {
     font-size: 14px;
-    color: #6b7280;
+    color: #9a9aa6;
     transition: 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #111827;
+    color: #5ee0f2;
 }
 
 .logout-btn {
     border: none;
-    background: #111827;
-    color: white;
+    background: #18181c;
+    color: #f2f2f5;
 
     padding: 10px 17px;
 
@@ -74,7 +74,7 @@ a {
 }
 
 .logout-btn:hover {
-    background: #374151;
+    background: #2a2a30;
 }
 
 
@@ -105,11 +105,11 @@ a {
 
     margin-bottom: 10px;
 
-    color: #111827;
+    color: #f2f2f5;
 }
 
 .welcome p {
-    color: #6b7280;
+    color: #9a9aa6;
 
     font-size: 16px;
 }
@@ -131,9 +131,9 @@ a {
 }
 
 .feature-card {
-    background: white;
+    background: #121214;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid #2a2a30;
 
     border-radius: 14px;
 
@@ -149,14 +149,14 @@ a {
 
     box-shadow:
         0 8px 25px
-        rgba(0, 0, 0, 0.06);
+        rgba(0, 0, 0, 0.25);
 }
 
 .feature-icon {
     width: 42px;
     height: 42px;
 
-    background: #f3f4f6;
+    background: #18181c;
 
     border-radius: 10px;
 
@@ -174,7 +174,7 @@ a {
 
     margin-bottom: 8px;
 
-    color: #111827;
+    color: #f2f2f5;
 }
 
 .feature-card p {
@@ -182,7 +182,7 @@ a {
 
     line-height: 1.5;
 
-    color: #6b7280;
+    color: #9a9aa6;
 
     margin-bottom: 18px;
 }
@@ -192,7 +192,7 @@ a {
 
     font-weight: 600;
 
-    color: #111827;
+    color: #5ee0f2;
 }
 
 
@@ -216,17 +216,17 @@ a {
 .section-header h2 {
     font-size: 21px;
 
-    color: #111827;
+    color: #f2f2f5;
 }
 
 .see-all {
     font-size: 13px;
 
-    color: #6b7280;
+    color: #9a9aa6;
 }
 
 .see-all:hover {
-    color: #111827;
+    color: #5ee0f2;
 }
 
 
@@ -235,9 +235,9 @@ a {
 ========================= */
 
 .history-container {
-    background: white;
+    background: #121214;
 
-    border: 1px solid #e5e7eb;
+    border: 1px solid #2a2a30;
 
     border-radius: 14px;
 
@@ -257,7 +257,7 @@ a {
 
     padding: 18px 22px;
 
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #2a2a30;
 }
 
 .history-item:last-child {
@@ -276,7 +276,7 @@ a {
     width: 38px;
     height: 38px;
 
-    background: #f3f4f6;
+    background: #18181c;
 
     border-radius: 8px;
 
@@ -292,7 +292,7 @@ a {
 
     font-weight: 600;
 
-    color: #111827;
+    color: #f2f2f5;
 
     margin-bottom: 4px;
 }
@@ -300,15 +300,15 @@ a {
 .file-info {
     font-size: 12px;
 
-    color: #9ca3af;
+    color: #9a9aa6;
 }
 
 .file-type {
     font-size: 12px;
 
-    color: #6b7280;
+    color: #9a9aa6;
 
-    background: #f3f4f6;
+    background: #18181c;
 
     padding: 5px 9px;
 
@@ -325,7 +325,7 @@ a {
 
     text-align: center;
 
-    color: #9ca3af;
+    color: #9a9aa6;
 
     font-size: 14px;
 }
