@@ -5,14 +5,14 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f6f8;
-    color: #222;
+    background: #0b0b0d;
+    color: #f2f2f5;
 }
 
 .navbar {
     height: 70px;
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
+    background: #121214;
+    border-bottom: 1px solid #2a2a30;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,7 +25,7 @@ body {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: #111827;
+    color: #f2f2f5;
 }
 
 .nav-links {
@@ -36,19 +36,19 @@ body {
 
 .nav-links a {
     font-size: 14px;
-    color: #6b7280;
+    color: #9a9aa6;
     transition: 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #111827;
+    color: #5ee0f2;
 }
 
 .logout-btn {
     border: none;
-    background: #111827;
-    color: white;
+    background: #18181c;
+    color: #f2f2f5;
     padding: 10px 17px;
     border-radius: 8px;
     cursor: pointer;
@@ -56,7 +56,7 @@ body {
 }
 
 .logout-btn:hover {
-    background: #374151;
+    background: #2a2a30;
 }
 
 
@@ -65,23 +65,24 @@ body {
     max-width: 500px;
     min-height: 100vh;
     margin: auto;
-    background: white;
+    background: #121214;
 }
 
 header {
     padding: 24px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #2a2a30;
 }
 
 header h1 {
     margin: 0;
     font-size: 24px;
+    color: #f2f2f5;
 }
 
 header p {
     margin: 8px 0 0;
-    color: #777;
+    color: #9a9aa6;
 }
 
 .section {
@@ -103,10 +104,11 @@ header p {
 
 .hero h2 {
     margin-bottom: 8px;
+    color: #f2f2f5;
 }
 
 .hero p {
-    color: #777;
+    color: #9a9aa6;
     line-height: 1.5;
 }
 
@@ -129,18 +131,18 @@ button {
 }
 
 .main-button {
-    background: #222;
-    color: white;
+    background: linear-gradient(135deg, #3b82f6, #a78bfa);
+    color: #ffffff;
 }
 
 .secondary {
-    background: #f0f0f0;
-    color: #222;
+    background: #18181c;
+    color: #f2f2f5;
 }
 
 .secondary-button {
-    background: #eee;
-    color: #222;
+    background: #18181c;
+    color: #f2f2f5;
 }
 
 .top-bar {
@@ -152,18 +154,20 @@ button {
 
 .top-bar button {
     background: none;
+    color: #5ee0f2;
     font-size: 25px;
 }
 
 .top-bar h2 {
     margin: 0;
+    color: #f2f2f5;
 }
 
 .camera-container {
     position: relative;
     width: 100%;
     aspect-ratio: 3 / 4;
-    background: black;
+    background: #000000;
     overflow: hidden;
     border-radius: 15px;
 }
@@ -180,13 +184,13 @@ button {
     height: 65%;
     left: 7.5%;
     top: 17.5%;
-    border: 2px solid white;
+    border: 2px solid #5ee0f2;
     border-radius: 12px;
 }
 
 .camera-info {
     text-align: center;
-    color: #777;
+    color: #9a9aa6;
 }
 
 .capture-button {
@@ -194,8 +198,8 @@ button {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: white;
-    border: 6px solid #ddd;
+    background: #f2f2f5;
+    border: 6px solid #454550;
     margin: 25px auto 0;
     font-size: 0;
 }
@@ -224,18 +228,20 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
+    color: #f2f2f5;
 }
 
 th,
 td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #2a2a30;
     text-align: left;
     white-space: nowrap;
 }
 
 th {
-    background: #f5f5f5;
+    background: #18181c;
+    color: #f2f2f5;
 }
 
 .download-actions {
@@ -250,8 +256,8 @@ th {
 .spinner {
     width: 40px;
     height: 40px;
-    border: 4px solid #ddd;
-    border-top-color: #222;
+    border: 4px solid #2a2a30;
+    border-top-color: #5ee0f2;
     border-radius: 50%;
     margin: auto;
     animation: spin 1s linear infinite;
