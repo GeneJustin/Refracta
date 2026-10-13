@@ -253,12 +253,6 @@ backResult.addEventListener("click", () => {
 });
 
 
-/*
-=========================================================
-PROCESS IMAGE
-=========================================================
-*/
-
 processButton.addEventListener("click", async () => {
 
     if (!selectedFile) {
@@ -279,14 +273,6 @@ processButton.addEventListener("click", async () => {
     resultContent.classList.add("hidden");
 
     try {
-
-        /*
-        =================================================
-        STEP 1
-        ASK FLASK FOR SUPABASE UPLOAD URL
-        =================================================
-        */
-
         console.log(
             "Step 1: Requesting Supabase upload URL..."
         );
@@ -327,14 +313,6 @@ processButton.addEventListener("click", async () => {
             uploadData.storage_path
         );
 
-
-        /*
-        =================================================
-        STEP 2
-        UPLOAD IMAGE DIRECTLY TO SUPABASE STORAGE
-        =================================================
-        */
-
         console.log(
             "Step 2: Uploading image to Supabase Storage..."
         );
@@ -374,13 +352,6 @@ processButton.addEventListener("click", async () => {
             "Image successfully uploaded to Supabase Storage."
         );
 
-
-        /*
-        =================================================
-        STEP 3
-        ASK FLASK TO PROCESS THE IMAGE
-        =================================================
-        */
 
         console.log(
             "Step 3: Sending storage path to Flask..."
@@ -425,13 +396,6 @@ processButton.addEventListener("click", async () => {
         }
 
 
-        /*
-        =================================================
-        STEP 4
-        RECEIVE AI RESULT
-        =================================================
-        */
-
         console.log(
             "AI processing completed."
         );
@@ -452,13 +416,6 @@ processButton.addEventListener("click", async () => {
             extractedData.transactions
         );
 
-
-        /*
-        =================================================
-        STEP 5
-        DISPLAY RESULT
-        =================================================
-        */
 
         renderTable(
             extractedData.transactions
@@ -493,12 +450,6 @@ processButton.addEventListener("click", async () => {
     }
 });
 
-
-/*
-=========================================================
-RENDER RESULT TABLE
-=========================================================
-*/
 
 function renderTable(transactions) {
 
@@ -550,12 +501,6 @@ function renderTable(transactions) {
 }
 
 
-/*
-=========================================================
-ESCAPE HTML
-=========================================================
-*/
-
 function escapeHtml(value) {
 
     return String(
@@ -584,12 +529,6 @@ function escapeHtml(value) {
 }
 
 
-/*
-=========================================================
-CSV DOWNLOAD
-=========================================================
-*/
-
 csvButton.addEventListener(
     "click",
     async () => {
@@ -607,3 +546,21 @@ csvButton.addEventListener(
             `/api/download/csv/${currentFileId}`;
     }
 );
+document
+    .getElementById("logoutButton")
+    .addEventListener(
+        "click",
+        async function() {
+
+            await fetch(
+                "/api/logout",
+                {
+                    method: "POST"
+                }
+            );
+
+            window.location.href =
+                "/login";
+
+        }
+    );
