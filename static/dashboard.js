@@ -282,7 +282,7 @@
     disposeCharts();
     readTheme();
     const root = $('#dashboardCanvas');
-    const provider = { gemini: 'Dirancang oleh AI · Gemini', openrouter: 'Dirancang oleh AI', heuristic: 'Dibuat otomatis' }[d.provider];
+    const provider = { gemini: 'Dirancang oleh AI · Refracta', openrouter: 'Dirancang oleh AI', heuristic: 'Dibuat otomatis' }[d.provider];
 
     root.innerHTML = `
       <div class="dash-header"><div>
@@ -299,7 +299,6 @@
       <div class="quality" id="qualityBox" hidden></div>
       <div class="dash-footer">Dibuat dengan Refracta</div>`;
 
-    // KPI
     const kpiRow = $('#kpiRow');
     (d.kpis || []).forEach((k, i) => {
       const el = document.createElement('div');
