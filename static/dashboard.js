@@ -73,15 +73,12 @@
     readTheme();
     if (state.dashboard && !$('#viewDashboard').hidden) renderDashboard(state.dashboard);
   }
-  function initTheme() {
-    let saved = null;
-    try { saved = localStorage.getItem('refracta-theme'); } catch (_) { /* abaikan */ }
-    document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+
+function initTheme() {
+    document.documentElement.setAttribute('data-theme', 'dark');
     readTheme();
-    $('#themeToggle').addEventListener('click', () => {
-      applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-    });
-  }
+}
+
 
   /* ---------- view ---------- */
   function showView(name) {
