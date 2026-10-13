@@ -1,6 +1,3 @@
-/* =========================================================
-   Refracta · Dashboard (frontend)
-   ========================================================= */
 (() => {
   'use strict';
 
@@ -794,3 +791,22 @@
 
   document.addEventListener('DOMContentLoaded', init);
 })();
+
+document
+    .getElementById("logoutButton")
+    .addEventListener(
+        "click",
+        async function() {
+
+            await fetch(
+                "/api/logout",
+                {
+                    method: "POST"
+                }
+            );
+
+            window.location.href =
+                "/login";
+
+        }
+    );
