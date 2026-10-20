@@ -20,6 +20,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    text-decoration: none;
 }
 
 .logo {
@@ -38,6 +39,7 @@ body {
     font-size: 14px;
     color: #6b7280;
     transition: 0.2s;
+    text-decoration: none;
 }
 
 .nav-links a:hover,
@@ -362,10 +364,6 @@ th {
     }
 
     /* ---------- Konten ---------- */
-    .app {
-        max-width: none;
-    }
-
     header {
         padding: 18px 16px;
     }
