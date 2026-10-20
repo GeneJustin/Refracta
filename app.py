@@ -535,7 +535,7 @@ def create_upload_url():
             raise Exception(
                 "Failed to create upload URL."
             )
-
+        print(upload_url)
         return jsonify({
             "success": True,
             "upload_url": upload_url,
@@ -560,6 +560,7 @@ def process_uploaded_file():
     data = request.get_json(silent=True) or {}
     
     storage_path = data.get("storage_path")
+    print(storage_path)
     original_filename = data.get(
         "original_filename",
         "receipt"
