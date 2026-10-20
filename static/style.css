@@ -24,7 +24,6 @@ a {
     position: sticky;
     top: 0;
     z-index: 100;
-    text-decoration: none;
 }
 
 .logo {
@@ -43,7 +42,6 @@ a {
     font-size: 14px;
     color: #6b7280;
     transition: 0.2s;
-    text-decoration: none;
 }
 
 .nav-links a:hover,
@@ -368,6 +366,17 @@ th {
     }
 
     /* ---------- Konten ---------- */
+
+    /* Kartu putih dengan jarak di sekelilingnya agar
+       latar abu-abu body tetap terlihat di HP */
+    .app {
+        width: calc(100% - 24px);
+        min-height: calc(100vh - 88px);
+        margin: 12px auto;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
     header {
         padding: 18px 16px;
     }
