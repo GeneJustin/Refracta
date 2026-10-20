@@ -4,38 +4,28 @@
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #0b0b0d;
-    color: #f2f2f5;
-    -webkit-tap-highlight-color: transparent;
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    color: #222;
 }
 
-/* NAVBAR (DESKTOP DEFAULT) */
 .navbar {
     height: 70px;
-    background: #121214;
-    border-bottom: 1px solid #2a2a30;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    color: #f2f2f5;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-}
-
-.nav-content {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+    color: #111827;
 }
 
 .nav-links {
@@ -46,204 +36,141 @@ body {
 
 .nav-links a {
     font-size: 14px;
-    color: #9a9aa6;
-    transition: color 0.2s ease;
-    text-decoration: none;
-    font-weight: 500;
+    color: #6b7280;
+    transition: 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #5ee0f2;
+    color: #111827;
 }
 
 .logout-btn {
     border: none;
-    background: #18181c;
-    color: #f2f2f5;
-    padding: 9px 18px;
+    background: #111827;
+    color: white;
+    padding: 10px 17px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
-    transition: background 0.2s ease;
 }
 
 .logout-btn:hover {
-    background: #2a2a30;
+    background: #374151;
 }
 
-.hamburger {
-    display: none !important; 
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001;
+/* Tombol hamburger: disembunyikan di PC */
+.menu-toggle {
+    display: none;
 }
 
-.hamburger span {
-    width: 100%;
-    height: 2px;
-    background-color: #f2f2f5;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
 
-.hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* LAYOUT CONTAINER */
 .app {
     width: 100%;
-    max-width: 480px;
-    min-height: calc(100vh - 70px);
-    margin: 0 auto;
-    background: #121214;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
 }
 
 header {
-    padding: 24px 20px;
+    padding: 24px;
     text-align: center;
-    border-bottom: 1px solid #2a2a30;
+    border-bottom: 1px solid #eee;
 }
 
 header h1 {
     margin: 0;
-    font-size: 22px;
-    color: #f2f2f5;
+    font-size: 24px;
 }
 
 header p {
-    margin: 6px 0 0;
-    font-size: 14px;
-    color: #9a9aa6;
+    margin: 8px 0 0;
+    color: #777;
 }
 
 .section {
-    padding: 20px;
-    flex: 1;
+    padding: 24px;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* HERO SECTION */
 .hero {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .hero .icon {
-    font-size: 56px;
-    margin-bottom: 12px;
+    font-size: 64px;
 }
 
 .hero h2 {
-    margin: 0 0 8px 0;
-    color: #f2f2f5;
-    font-size: 20px;
+    margin-bottom: 8px;
 }
 
 .hero p {
-    color: #9a9aa6;
+    color: #777;
     line-height: 1.5;
-    font-size: 14px;
-    margin: 0;
 }
 
 .actions {
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    margin-top: 40px;
 }
 
 button {
     border: none;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    transition: opacity 0.2s, transform 0.1s;
-}
-
-button:active {
-    transform: scale(0.98);
+    font-size: 16px;
 }
 
 .main-button,
 .secondary-button {
     width: 100%;
-    padding: 14px 18px;
+    padding: 15px;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    margin-top: 12px;
 }
 
 .main-button {
-    background: linear-gradient(135deg, #3b82f6, #a78bfa);
-    color: #ffffff;
+    background: #222;
+    color: white;
 }
 
 .secondary {
-    background: #18181c;
-    color: #f2f2f5;
-    border: 1px solid #2a2a30;
+    background: #f0f0f0;
+    color: #222;
 }
 
 .secondary-button {
-    background: #18181c;
-    color: #f2f2f5;
-    border: 1px solid #2a2a30;
+    background: #eee;
+    color: #222;
 }
 
-/* CAMERA & PREVIEW */
 .top-bar {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .top-bar button {
     background: none;
-    color: #5ee0f2;
-    font-size: 22px;
-    padding: 4px;
-    line-height: 1;
+    font-size: 25px;
 }
 
 .top-bar h2 {
     margin: 0;
-    color: #f2f2f5;
-    font-size: 18px;
 }
 
 .camera-container {
     position: relative;
     width: 100%;
     aspect-ratio: 3 / 4;
-    background: #000000;
+    background: black;
     overflow: hidden;
-    border-radius: 16px;
-    border: 1px solid #2a2a30;
+    border-radius: 15px;
 }
 
 #camera {
@@ -255,102 +182,84 @@ button:active {
 .camera-frame {
     position: absolute;
     width: 85%;
-    height: 70%;
+    height: 65%;
     left: 7.5%;
-    top: 15%;
-    border: 2px dashed #5ee0f2;
+    top: 17.5%;
+    border: 2px solid white;
     border-radius: 12px;
-    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
 }
 
 .camera-info {
     text-align: center;
-    color: #9a9aa6;
-    font-size: 13px;
-    margin-top: 14px;
+    color: #777;
 }
 
 .capture-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 68px;
-    height: 68px;
+    display: block;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    background: #f2f2f5;
-    border: 5px solid #2a2a30;
-    margin: 20px auto 0;
+    background: white;
+    border: 6px solid #ddd;
+    margin: 25px auto 0;
     font-size: 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .preview-image {
     width: 100%;
     border-radius: 12px;
-    max-height: 480px;
+    max-height: 550px;
     object-fit: contain;
-    background: #000;
-    border: 1px solid #2a2a30;
 }
 
 .preview-actions {
     display: flex;
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px;
 }
 
 .preview-actions button {
     flex: 1;
 }
 
-/* TABLE & RESULTS */
 .table-wrapper {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-radius: 10px;
-    border: 1px solid #2a2a30;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
-    color: #f2f2f5;
 }
 
 th,
 td {
-    padding: 12px;
-    border-bottom: 1px solid #2a2a30;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
     white-space: nowrap;
 }
 
 th {
-    background: #18181c;
-    color: #9a9aa6;
-    font-weight: 600;
+    background: #f5f5f5;
 }
 
 .download-actions {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
-/* LOADING */
 .loading {
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 .spinner {
-    width: 36px;
-    height: 36px;
-    border: 3px solid #2a2a30;
-    border-top-color: #5ee0f2;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ddd;
+    border-top-color: #222;
     border-radius: 50%;
     margin: auto;
-    animation: spin 0.8s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -359,62 +268,167 @@ th {
     }
 }
 
-/* ========================================== */
-/* RESPONSIVE DESIGN (MOBILE / HP BREAKPOINT) */
-/* ========================================== */
 
+/* =====================================================
+   MOBILE (<= 768px)
+   Semua aturan di bawah hanya berlaku di layar kecil.
+   Tampilan PC di atas tidak berubah sama sekali.
+   ===================================================== */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex !important;
+
+    /* ---------- Navbar + hamburger ---------- */
+    .navbar {
+        height: auto;
+        min-height: 64px;
+        flex-wrap: wrap;
+        padding: 0 20px;
     }
-    .nav-content {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: #121214;
+
+    .logo {
+        font-size: 22px;
+        line-height: 64px;
+    }
+
+    .menu-toggle {
+        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-        padding: 24px 20px;
-        gap: 24px;
-        transform: translateY(-100%);
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 0;
+        background: none;
+        border-radius: 8px;
+    }
+
+    .menu-toggle:hover {
+        background: #f3f4f6;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #111827;
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    /* Animasi hamburger -> X */
+    .navbar.open .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .navbar.open .menu-toggle span:nth-child(2) {
         opacity: 0;
-        pointer-events: none;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-        border-bottom: 1px solid #2a2a30;
     }
 
-    .nav-content.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
+    .navbar.open .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
+    /* Menu tersembunyi sampai hamburger ditekan */
     .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        display: none;
+        order: 3;
         width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
     }
 
     .nav-links a {
-        font-size: 18px;
-        width: 100%;
-        padding: 10px 0;
-        border-bottom: 1px solid #18181c;
+        padding: 15px 4px;
+        font-size: 15px;
+        border-top: 1px solid #f0f0f0;
     }
 
     .logout-btn {
+        display: none;
+        order: 4;
         width: 100%;
-        padding: 14px;
-        margin-top: auto;
-        text-align: center;
+        margin: 8px 0 16px;
+        padding: 12px 17px;
     }
 
+    .navbar.open .nav-links {
+        display: flex;
+    }
+
+    .navbar.open .logout-btn {
+        display: block;
+    }
+
+    /* ---------- Konten ---------- */
     .app {
-        box-shadow: none;
-        border: none;
+        max-width: none;
+    }
+
+    header {
+        padding: 18px 16px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .section {
+        padding: 20px 16px;
+    }
+
+    .hero {
+        margin-top: 28px;
+    }
+
+    .hero .icon {
+        font-size: 52px;
+    }
+
+    .actions {
+        margin-top: 28px;
+    }
+
+    .main-button,
+    .secondary-button {
+        padding: 14px;
+    }
+
+    .camera-container {
+        border-radius: 12px;
+    }
+
+    .preview-image {
+        max-height: 60vh;
+    }
+
+    .preview-actions {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .top-bar h2 {
+        font-size: 18px;
     }
 }
