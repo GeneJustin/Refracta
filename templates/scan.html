@@ -203,12 +203,12 @@
 <script src="/static/script.js"></script>
 <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navContent = document.getElementById('navContent');
+    const navMenu = document.getElementById('navMenu');
 
-    if (hamburgerBtn && navContent) {
+    if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('active');
-            navContent.classList.toggle('open');
+            navMenu.classList.toggle('active');
         });
     }
 </script>
