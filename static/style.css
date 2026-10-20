@@ -73,9 +73,8 @@ body {
     background: #2a2a30;
 }
 
-/* HAMBURGER BUTTON (HIDDEN ON DESKTOP) */
 .hamburger {
-    display: none;
+    display: none !important; 
     flex-direction: column;
     justify-content: space-between;
     width: 24px;
@@ -95,7 +94,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* HAMBURGER ANIMATION WHEN ACTIVE */
 .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -367,9 +365,8 @@ th {
 
 @media (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
-
     .nav-content {
         position: fixed;
         top: 70px;
