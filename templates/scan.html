@@ -10,32 +10,45 @@
 </head>
 
 <body>
-<nav class="navbar">
-    <a href="/" class="logo">
-        Refracta
-    </a>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            Refracta
+        </a>
 
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+        <!-- Hamburger Icon untuk Tampilan Mobile -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <div class="nav-menu" id="navMenu">
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/scan" class="active">Scan</a>
-            <a href="/chatbot">AI Chatbot</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/history">History</a>
+        <div class="nav-content" id="navContent">
+            <div class="nav-links">
+                <a href="/">
+                    Home
+                </a>
+                <a href="/scan" class="active">
+                    Scan
+                </a>
+                <a href="/chatbot">
+                    AI Chatbot
+                </a>
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+                <a href="/history">
+                    History
+                </a>
+            </div>
+
+            <button id="logoutButton" class="logout-btn">
+                Logout
+            </button>
         </div>
 
-        <button id="logoutButton" class="logout-btn">
-            Logout
-        </button>
-    </div>
-</nav>
-    <div class="app">
+    </nav>
+
+<div class="app">
 
     <header>
         <h1>Refracta</h1>
@@ -201,14 +214,15 @@
 </div>
 
 <script src="/static/script.js"></script>
+
 <script>
     const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navMenu = document.getElementById('navMenu');
+    const navContent = document.getElementById('navContent');
 
-    if (hamburgerBtn && navMenu) {
+    if (hamburgerBtn && navContent) {
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            navContent.classList.toggle('open');
         });
     }
 </script>
