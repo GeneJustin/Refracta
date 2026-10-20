@@ -121,6 +121,10 @@ select:focus-visible {
     background: #2a2a30;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 .history-page {
     width: min(100%, 1120px);
     min-height: calc(100vh - 72px);
@@ -726,297 +730,105 @@ select:focus-visible {
     display: inline-flex;
 }
 
-/* TABLET */
-
-@media (max-width: 900px) {
-    .navbar {
-        gap: 18px;
-        padding-right: 24px;
-        padding-left: 24px;
-    }
-
-    .nav-links {
-        gap: 17px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .history-page {
-        padding-right: 24px;
-        padding-left: 24px;
-    }
-
-    .card-main {
-        gap: 13px;
-        padding: 15px;
-    }
-
-    .file-thumbnail {
-        flex-basis: 72px;
-        width: 72px;
-        height: 68px;
-    }
-
-    .file-summary {
-        flex-basis: 82px;
-        padding-left: 13px;
-    }
-
-    .details-toggle {
-        padding-right: 9px;
-        padding-left: 9px;
-    }
-}
-
-/* MOBILE NAVIGATION */
+/* HAMBURGER NAVBAR (MOBILE) */
 
 @media (max-width: 700px) {
     .navbar {
         flex-wrap: wrap;
-        justify-content: space-between;
+        align-items: center;
         gap: 0;
-        min-height: auto;
-        padding: 16px 18px 0;
+        min-height: 64px;
+        height: auto;
+        padding: 0 18px;
     }
 
     .logo {
-        padding-bottom: 14px;
+        padding-bottom: 0;
         font-size: 22px;
+        line-height: 64px;
     }
 
-    .logout-btn {
-        margin-bottom: 14px;
-        padding: 8px 12px;
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 0;
+        border: 0;
+        border-radius: 8px;
+        background: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+        background: #18181c;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: #f2f2f5;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    .navbar.open .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .navbar.open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.open .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
     .nav-links {
-        order: 3;
-        justify-content: flex-start;
-        gap: 23px;
-        width: 100%;
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
-
-    .nav-links::-webkit-scrollbar {
         display: none;
+        order: 3;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        width: 100%;
+        overflow: visible;
     }
 
     .nav-links a {
         flex-shrink: 0;
-        padding: 13px 0 14px;
-        font-size: 12px;
+        padding: 15px 4px;
+        font-size: 14px;
+        border-top: 1px solid #2a2a30;
     }
 
-    .history-page {
-        min-height: calc(100vh - 100px);
-        padding: 30px 17px 42px;
-    }
-
-    .page-header {
-        align-items: flex-start;
-        gap: 16px;
-        margin-bottom: 25px;
-    }
-
-    .page-header h1 {
-        font-size: 29px;
-    }
-
-    .page-description {
-        max-width: 350px;
-        font-size: 12px;
-    }
-
-    .page-header > .primary-button {
-        min-height: 38px;
-        margin-top: 25px;
-        padding: 9px 12px;
-        font-size: 11px;
-    }
-
-    .history-toolbar {
-        flex-wrap: wrap;
-        gap: 9px;
-        margin-bottom: 23px;
-    }
-
-    .search-box {
-        flex-basis: 100%;
-        min-height: 44px;
-    }
-
-    .history-toolbar select {
-        flex: 1;
-        min-width: 0;
-        min-height: 42px;
-    }
-
-    .history-list {
-        gap: 10px;
-    }
-
-    .history-card {
-        border-radius: 12px;
-    }
-
-    .card-main {
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 13px;
-    }
-
-    .file-thumbnail {
-        flex: 0 0 70px;
-        width: 70px;
-        height: 68px;
-    }
-
-    .file-info {
-        flex: 1 1 calc(100% - 90px);
-    }
-
-    .file-info h2 {
-        margin-bottom: 7px;
-        font-size: 13px;
-    }
-
-    .file-meta {
-        gap: 6px;
-        font-size: 10px;
-    }
-
-    .date-label {
-        margin-top: 7px;
-        font-size: 10px;
-    }
-
-    .file-summary {
+    .logout-btn {
         display: none;
+        order: 4;
+        width: 100%;
+        margin: 8px 0 16px;
+        padding: 12px 17px;
     }
 
-    .details-toggle {
-        margin-left: auto;
-        min-height: 34px;
+    .navbar.open .nav-links {
+        display: flex;
     }
 
-    .card-details {
-        padding: 15px;
-    }
-
-    .detail-content {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 23px;
-    }
-
-    .image-preview-link {
-        height: 230px;
-    }
-
-    .download-card {
-        gap: 10px;
-        padding: 12px;
-    }
-
-    .download-button {
-        padding: 9px 10px;
-    }
-
-    .empty-state {
-        padding: 42px 18px;
+    .navbar.open .logout-btn {
+        display: block;
     }
 }
-
-/* SMALL MOBILE */
 
 @media (max-width: 420px) {
     .navbar {
-        padding-right: 14px;
-        padding-left: 14px;
-    }
-
-    .nav-links {
-        gap: 19px;
-    }
-
-    .history-page {
-        padding: 25px 13px 35px;
-    }
-
-    .page-header {
-        flex-wrap: wrap;
-        gap: 13px;
-    }
-
-    .page-header > .primary-button {
-        margin-top: 0;
-    }
-
-    .page-header h1 {
-        font-size: 27px;
-    }
-
-    .page-description {
-        font-size: 11.5px;
-    }
-
-    .results-header {
-        font-size: 11px;
-    }
-
-    .card-main {
-        gap: 10px;
-        padding: 11px;
-    }
-
-    .file-thumbnail {
-        flex-basis: 62px;
-        width: 62px;
-        height: 62px;
-    }
-
-    .file-info {
-        flex-basis: calc(100% - 76px);
-    }
-
-    .file-info h2 {
-        font-size: 12px;
-    }
-
-    .file-meta {
-        font-size: 9.5px;
-    }
-
-    .type-badge {
-        min-height: 21px;
-        padding: 3px 6px;
-        font-size: 8px;
-    }
-
-    .details-toggle {
-        font-size: 10px;
-    }
-
-    .download-card {
-        flex-wrap: wrap;
-    }
-
-    .download-info {
-        flex-basis: calc(100% - 65px);
-    }
-
-    .download-button {
-        width: 100%;
-    }
-
-    .image-preview-link {
-        height: 200px;
+        padding: 0 14px;
     }
 }
-
-/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
     *,
