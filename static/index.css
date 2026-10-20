@@ -1,9 +1,9 @@
-* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     background: #0b0b0d;
     color: #f2f2f5;
@@ -14,14 +14,22 @@ a {
     color: inherit;
 }
 
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
     height: 70px;
     background: #121214;
     border-bottom: 1px solid #2a2a30;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 6%;
+
     position: sticky;
     top: 0;
     z-index: 100;
@@ -54,9 +62,13 @@ a {
     border: none;
     background: #18181c;
     color: #f2f2f5;
+
     padding: 10px 17px;
+
     border-radius: 8px;
+
     cursor: pointer;
+
     font-size: 14px;
 }
 
@@ -64,411 +76,310 @@ a {
     background: #2a2a30;
 }
 
-/* Tombol hamburger: disembunyikan di PC */
-.menu-toggle {
-    display: none;
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 50px 0;
 }
 
 
-.app {
-    width: 100%;
-    max-width: 500px;
-    min-height: 100vh;
-    margin: auto;
-    background: #121214;
-    box-shadow: 0 0 0 1px #2a2a30;
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+    margin-bottom: 40px;
 }
 
-header {
-    padding: 24px;
-    text-align: center;
-    border-bottom: 1px solid #2a2a30;
-}
+.welcome h1 {
+    font-size: 32px;
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+    margin-bottom: 10px;
+
     color: #f2f2f5;
 }
 
-header p {
-    margin: 8px 0 0;
+.welcome p {
     color: #9a9aa6;
-}
 
-.section {
-    padding: 24px;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.hero {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.hero .icon {
-    font-size: 64px;
-}
-
-.hero h2 {
-    margin-bottom: 8px;
-    color: #f2f2f5;
-}
-
-.hero p {
-    color: #9a9aa6;
-    line-height: 1.5;
-}
-
-.actions {
-    margin-top: 40px;
-}
-
-button {
-    border: none;
-    cursor: pointer;
     font-size: 16px;
 }
 
-.main-button,
-.secondary-button {
-    width: 100%;
-    padding: 15px;
-    border-radius: 12px;
-    margin-top: 12px;
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 50px;
 }
 
-.main-button {
-    background: #5ee0f2;
-    color: #0b0b0d;
-    font-weight: 600;
+.feature-card {
+    background: #121214;
+
+    border: 1px solid #2a2a30;
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    min-height: 190px;
+
+    transition: 0.2s;
 }
 
-.main-button:hover {
-    background: #7be8f6;
+.feature-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.25);
 }
 
-.secondary {
+.feature-icon {
+    width: 42px;
+    height: 42px;
+
     background: #18181c;
-    color: #f2f2f5;
-    font-weight: 400;
-    box-shadow: inset 0 0 0 1px #2a2a30;
-}
 
-.secondary:hover {
-    background: #2a2a30;
-}
+    border-radius: 10px;
 
-.secondary-button {
-    background: #18181c;
-    color: #f2f2f5;
-    box-shadow: inset 0 0 0 1px #2a2a30;
-}
-
-.secondary-button:hover {
-    background: #2a2a30;
-}
-
-.top-bar {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    justify-content: center;
+
+    font-size: 20px;
+
+    margin-bottom: 18px;
 }
 
-.top-bar button {
-    background: none;
-    font-size: 25px;
+.feature-card h3 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+
     color: #f2f2f5;
 }
 
-.top-bar button:hover {
+.feature-card p {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #9a9aa6;
+
+    margin-bottom: 18px;
+}
+
+.feature-link {
+    font-size: 13px;
+
+    font-weight: 600;
+
     color: #5ee0f2;
 }
 
-.top-bar h2 {
-    margin: 0;
-    color: #f2f2f5;
+
+/* =========================
+   RECENT ACTIVITY
+========================= */
+
+.recent-section {
+    margin-bottom: 30px;
 }
 
-.camera-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    background: black;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-#camera {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.camera-frame {
-    position: absolute;
-    width: 85%;
-    height: 65%;
-    left: 7.5%;
-    top: 17.5%;
-    border: 2px solid #5ee0f2;
-    border-radius: 12px;
-}
-
-.camera-info {
-    text-align: center;
-    color: #9a9aa6;
-}
-
-.capture-button {
-    display: block;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: #f2f2f5;
-    border: 6px solid #2a2a30;
-    margin: 25px auto 0;
-    font-size: 0;
-}
-
-.preview-image {
-    width: 100%;
-    border-radius: 12px;
-    max-height: 550px;
-    object-fit: contain;
-}
-
-.preview-actions {
+.section-header {
     display: flex;
-    gap: 10px;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
 }
 
-.preview-actions button {
-    flex: 1;
+.section-header h2 {
+    font-size: 21px;
+
+    color: #f2f2f5;
 }
 
-.table-wrapper {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
+.see-all {
     font-size: 13px;
-    color: #f2f2f5;
-}
 
-th,
-td {
-    padding: 10px;
-    border-bottom: 1px solid #2a2a30;
-    text-align: left;
-    white-space: nowrap;
-}
-
-th {
-    background: #18181c;
-    color: #f2f2f5;
-}
-
-.download-actions {
-    margin-top: 25px;
-}
-
-.loading {
-    text-align: center;
-    padding: 50px 0;
     color: #9a9aa6;
 }
 
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #2a2a30;
-    border-top-color: #5ee0f2;
-    border-radius: 50%;
-    margin: auto;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+.see-all:hover {
+    color: #5ee0f2;
 }
 
 
-/* =====================================================
-   MOBILE (<= 768px)
-   Semua aturan di bawah hanya berlaku di layar kecil.
-   Tampilan PC di atas tidak berubah sama sekali.
-   ===================================================== */
-@media (max-width: 768px) {
+/* =========================
+   HISTORY CONTAINER
+========================= */
 
-    /* ---------- Navbar + hamburger ---------- */
-    .navbar {
-        height: auto;
-        min-height: 64px;
-        flex-wrap: wrap;
-        padding: 0 20px;
+.history-container {
+    background: #121214;
+
+    border: 1px solid #2a2a30;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HISTORY ITEM
+========================= */
+
+.history-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #2a2a30;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.file-icon {
+    width: 38px;
+    height: 38px;
+
+    background: #18181c;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.file-name {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #f2f2f5;
+
+    margin-bottom: 4px;
+}
+
+.file-info {
+    font-size: 12px;
+
+    color: #9a9aa6;
+}
+
+.file-type {
+    font-size: 12px;
+
+    color: #9a9aa6;
+
+    background: #18181c;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+}
+
+
+/* =========================
+   EMPTY HISTORY
+========================= */
+
+.empty-history {
+    padding: 55px 20px;
+
+    text-align: center;
+
+    color: #9a9aa6;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .features {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .logo {
-        font-size: 22px;
-        line-height: 64px;
-    }
-
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 44px;
-        height: 44px;
-        margin-left: auto;
-        padding: 0;
-        background: none;
-        border-radius: 8px;
-    }
-
-    .menu-toggle:hover {
-        background: #18181c;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #f2f2f5;
-        border-radius: 2px;
-        transition: transform 0.25s ease, opacity 0.2s ease;
-    }
-
-    /* Animasi hamburger -> X */
-    .navbar.open .menu-toggle span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .navbar.open .menu-toggle span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .navbar.open .menu-toggle span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Menu tersembunyi sampai hamburger ditekan */
     .nav-links {
-        display: none;
-        order: 3;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 5%;
     }
 
     .nav-links a {
-        padding: 15px 4px;
-        font-size: 15px;
-        border-top: 1px solid #2a2a30;
-    }
-
-    .logout-btn {
         display: none;
-        order: 4;
-        width: 100%;
-        margin: 8px 0 16px;
-        padding: 12px 17px;
     }
 
-    .navbar.open .nav-links {
-        display: flex;
+    .container {
+        width: 90%;
+
+        padding: 35px 0;
     }
 
-    .navbar.open .logout-btn {
-        display: block;
+    .welcome h1 {
+        font-size: 27px;
     }
 
-    /* ---------- Konten ---------- */
-
-    /* Kartu dengan jarak di sekelilingnya agar
-       latar body tetap terlihat di HP */
-    .app {
-        width: calc(100% - 24px);
-        min-height: calc(100vh - 88px);
-        margin: 12px auto;
-        border-radius: 16px;
-        overflow: hidden;
+    .features {
+        grid-template-columns: 1fr;
     }
 
-    header {
-        padding: 18px 16px;
+    .feature-card {
+        min-height: auto;
     }
 
-    header h1 {
-        font-size: 22px;
+    .history-item {
+        padding: 15px;
     }
 
-    .section {
-        padding: 20px 16px;
-    }
-
-    .hero {
-        margin-top: 28px;
-    }
-
-    .hero .icon {
-        font-size: 52px;
-    }
-
-    .actions {
-        margin-top: 28px;
-    }
-
-    .main-button,
-    .secondary-button {
-        padding: 14px;
-    }
-
-    .camera-container {
-        border-radius: 12px;
-    }
-
-    .preview-image {
-        max-height: 60vh;
-    }
-
-    .preview-actions {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .navbar {
-        padding: 0 16px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .top-bar h2 {
-        font-size: 18px;
+    .file-type {
+        display: none;
     }
 }
