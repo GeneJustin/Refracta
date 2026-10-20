@@ -10,32 +10,41 @@
 </head>
 
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <a href="/" class="logo">
             Refracta
         </a>
 
-        <div class="nav-links">
-            <a href="/">
-                Home
-            </a>
-            <a href="/scan" class="active">
-                Scan
-            </a>
-            <a href="/chatbot">
-                AI Chatbot
-            </a>
-            <a href="/dashboard">
-                Dashboard
-            </a>
-            <a href="/history">
-                History
-            </a>
-        </div>
-
-        <button id="logoutButton" class="logout-btn">
-            Logout
+        <!-- Hamburger Icon untuk Tampilan Mobile -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
+
+        <div class="nav-content" id="navContent">
+            <div class="nav-links">
+                <a href="/">
+                    Home
+                </a>
+                <a href="/scan" class="active">
+                    Scan
+                </a>
+                <a href="/chatbot">
+                    AI Chatbot
+                </a>
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+                <a href="/history">
+                    History
+                </a>
+            </div>
+
+            <button id="logoutButton" class="logout-btn">
+                Logout
+            </button>
+        </div>
 
     </nav>
 <div class="app">
