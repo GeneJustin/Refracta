@@ -5,18 +5,19 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f6f8;
-    color: #222;
+    background: #0b0b0d;
+    color: #f2f2f5;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 .navbar {
     height: 70px;
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
+    background: #121214;
+    border-bottom: 1px solid #2a2a30;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,7 +30,7 @@ a {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: #111827;
+    color: #f2f2f5;
 }
 
 .nav-links {
@@ -40,19 +41,19 @@ a {
 
 .nav-links a {
     font-size: 14px;
-    color: #6b7280;
+    color: #9a9aa6;
     transition: 0.2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #111827;
+    color: #5ee0f2;
 }
 
 .logout-btn {
     border: none;
-    background: #111827;
-    color: white;
+    background: #18181c;
+    color: #f2f2f5;
     padding: 10px 17px;
     border-radius: 8px;
     cursor: pointer;
@@ -60,7 +61,7 @@ a {
 }
 
 .logout-btn:hover {
-    background: #374151;
+    background: #2a2a30;
 }
 
 /* Tombol hamburger: disembunyikan di PC */
@@ -74,23 +75,25 @@ a {
     max-width: 500px;
     min-height: 100vh;
     margin: auto;
-    background: white;
+    background: #121214;
+    box-shadow: 0 0 0 1px #2a2a30;
 }
 
 header {
     padding: 24px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #2a2a30;
 }
 
 header h1 {
     margin: 0;
     font-size: 24px;
+    color: #f2f2f5;
 }
 
 header p {
     margin: 8px 0 0;
-    color: #777;
+    color: #9a9aa6;
 }
 
 .section {
@@ -112,10 +115,11 @@ header p {
 
 .hero h2 {
     margin-bottom: 8px;
+    color: #f2f2f5;
 }
 
 .hero p {
-    color: #777;
+    color: #9a9aa6;
     line-height: 1.5;
 }
 
@@ -138,18 +142,34 @@ button {
 }
 
 .main-button {
-    background: #222;
-    color: white;
+    background: #5ee0f2;
+    color: #0b0b0d;
+    font-weight: 600;
+}
+
+.main-button:hover {
+    background: #7be8f6;
 }
 
 .secondary {
-    background: #f0f0f0;
-    color: #222;
+    background: #18181c;
+    color: #f2f2f5;
+    font-weight: 400;
+    box-shadow: inset 0 0 0 1px #2a2a30;
+}
+
+.secondary:hover {
+    background: #2a2a30;
 }
 
 .secondary-button {
-    background: #eee;
-    color: #222;
+    background: #18181c;
+    color: #f2f2f5;
+    box-shadow: inset 0 0 0 1px #2a2a30;
+}
+
+.secondary-button:hover {
+    background: #2a2a30;
 }
 
 .top-bar {
@@ -162,10 +182,16 @@ button {
 .top-bar button {
     background: none;
     font-size: 25px;
+    color: #f2f2f5;
+}
+
+.top-bar button:hover {
+    color: #5ee0f2;
 }
 
 .top-bar h2 {
     margin: 0;
+    color: #f2f2f5;
 }
 
 .camera-container {
@@ -189,13 +215,13 @@ button {
     height: 65%;
     left: 7.5%;
     top: 17.5%;
-    border: 2px solid white;
+    border: 2px solid #5ee0f2;
     border-radius: 12px;
 }
 
 .camera-info {
     text-align: center;
-    color: #777;
+    color: #9a9aa6;
 }
 
 .capture-button {
@@ -203,8 +229,8 @@ button {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: white;
-    border: 6px solid #ddd;
+    background: #f2f2f5;
+    border: 6px solid #2a2a30;
     margin: 25px auto 0;
     font-size: 0;
 }
@@ -233,18 +259,20 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
+    color: #f2f2f5;
 }
 
 th,
 td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #2a2a30;
     text-align: left;
     white-space: nowrap;
 }
 
 th {
-    background: #f5f5f5;
+    background: #18181c;
+    color: #f2f2f5;
 }
 
 .download-actions {
@@ -254,13 +282,14 @@ th {
 .loading {
     text-align: center;
     padding: 50px 0;
+    color: #9a9aa6;
 }
 
 .spinner {
     width: 40px;
     height: 40px;
-    border: 4px solid #ddd;
-    border-top-color: #222;
+    border: 4px solid #2a2a30;
+    border-top-color: #5ee0f2;
     border-radius: 50%;
     margin: auto;
     animation: spin 1s linear infinite;
@@ -308,14 +337,14 @@ th {
     }
 
     .menu-toggle:hover {
-        background: #f3f4f6;
+        background: #18181c;
     }
 
     .menu-toggle span {
         display: block;
         width: 22px;
         height: 2px;
-        background: #111827;
+        background: #f2f2f5;
         border-radius: 2px;
         transition: transform 0.25s ease, opacity 0.2s ease;
     }
@@ -346,7 +375,7 @@ th {
     .nav-links a {
         padding: 15px 4px;
         font-size: 15px;
-        border-top: 1px solid #f0f0f0;
+        border-top: 1px solid #2a2a30;
     }
 
     .logout-btn {
@@ -367,8 +396,8 @@ th {
 
     /* ---------- Konten ---------- */
 
-    /* Kartu putih dengan jarak di sekelilingnya agar
-       latar abu-abu body tetap terlihat di HP */
+    /* Kartu dengan jarak di sekelilingnya agar
+       latar body tetap terlihat di HP */
     .app {
         width: calc(100% - 24px);
         min-height: calc(100vh - 88px);
