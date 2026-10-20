@@ -9,12 +9,23 @@
     <script src="/static/history.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a href="/" class="logo">
             Refracta
         </a>
-
-        <div class="nav-links">
+        <button
+            id="menuToggle"
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="/">
                 Home
             </a>
@@ -160,5 +171,24 @@
             </div>
         </section>
     </main>
+    <script>
+    (function () {
+        var navbar = document.getElementById("navbar");
+        var toggle = document.getElementById("menuToggle");
+
+        function setOpen(open) {
+            navbar.classList.toggle("open", open);
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+
+        toggle.addEventListener("click", function () {
+            setOpen(!navbar.classList.contains("open"));
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 700) setOpen(false);
+        });
+    })();
+</script>
 </body>
 </html>
