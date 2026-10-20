@@ -208,6 +208,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
     background: #2a2a30;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 
 .page { max-width: 1280px; margin: 0 auto; padding: 36px 28px 120px; }
 
@@ -535,8 +539,6 @@ body.exporting .chart-grid .span-6 { grid-column: span 6; }
 body.exporting * { animation: none !important; transition: none !important; }
 
 
-
-
 @media (max-width: 900px) {
 
   .source-grid { grid-template-columns: 1fr; }
@@ -561,4 +563,102 @@ body.exporting * { animation: none !important; transition: none !important; }
 
   .generate-bar { padding: 12px; }
 
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        padding: 0;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0;
+        min-height: 64px;
+        height: auto;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 22px;
+        line-height: 64px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 0;
+        border: 0;
+        border-radius: 8px;
+        background: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+        background: #18181c;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: #f2f2f5;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    .navbar.open .menu-toggle span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .navbar.open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.open .menu-toggle span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-links {
+        display: none;
+        order: 3;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 15px 4px;
+        font-size: 14px;
+        border-top: 1px solid #2a2a30;
+    }
+
+    .logout-btn {
+        display: none;
+        order: 4;
+        width: 100%;
+        margin: 8px 0 16px;
+        padding: 12px 17px;
+    }
+
+    .navbar.open .nav-links {
+        display: flex;
+    }
+
+    .navbar.open .logout-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar {
+        padding: 0 14px;
+    }
 }
