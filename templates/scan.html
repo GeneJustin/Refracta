@@ -10,44 +10,48 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a href="/" class="logo">
             Refracta
         </a>
 
-        <!-- Hamburger Icon untuk Tampilan Mobile -->
-        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
+        <!-- Tombol hamburger (hanya muncul di mobile) -->
+        <button
+            id="menuToggle"
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+        >
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <div class="nav-content" id="navContent">
-            <div class="nav-links">
-                <a href="/">
-                    Home
-                </a>
-                <a href="/scan" class="active">
-                    Scan
-                </a>
-                <a href="/chatbot">
-                    AI Chatbot
-                </a>
-                <a href="/dashboard">
-                    Dashboard
-                </a>
-                <a href="/history">
-                    History
-                </a>
-            </div>
-
-            <button id="logoutButton" class="logout-btn">
-                Logout
-            </button>
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="active">
+                Home
+            </a>
+            <a href="/scan">
+                Scan
+            </a>
+            <a href="/chatbot">
+                AI Chatbot
+            </a>
+            <a href="/dashboard">
+                Dashboard
+            </a>
+            <a href="/history">
+                History
+            </a>
         </div>
 
-    </nav>
+        <button id="logoutButton" class="logout-btn">
+            Logout
+        </button>
 
+    </nav>
 <div class="app">
 
     <header>
@@ -213,20 +217,27 @@
 
 </div>
 
-<script src="/static/script.js"></script>
-
-<!-- Script kecil opsional khusus untuk toggle hamburger menu -->
 <script>
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const navContent = document.getElementById('navContent');
+    (function () {
+        var navbar = document.getElementById("navbar");
+        var toggle = document.getElementById("menuToggle");
 
-    if (hamburgerBtn && navContent) {
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            navContent.classList.toggle('open');
+        function setOpen(open) {
+            navbar.classList.toggle("open", open);
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+
+        toggle.addEventListener("click", function () {
+            setOpen(!navbar.classList.contains("open"));
         });
-    }
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 768) setOpen(false);
+        });
+    })();
 </script>
+
+<script src="/static/script.js"></script>
 
 </body>
 </html>
